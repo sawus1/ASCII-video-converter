@@ -1,6 +1,7 @@
 #include <opencv2/opencv.hpp>
 #include "video_processor.hpp"
 #include "frame_processor.hpp"
+#include "ascii_converter.hpp"
 #include <iostream>
 #include <string>
 
@@ -11,5 +12,10 @@ int main(int argc, const char** argv) {
     std::vector<cv::Mat> frames = extract_frames(video);
     std::cout << "Frames_count:" << frames.size() << "\n";
     process_frames(frames);
-    cv::imwrite("../assets/image.jpg", frames[20]);
+    std::vector<std::vector<std::string>> ascii_video = convert_video_to_ascii(frames);
+    std::vector<std::string> frame = ascii_video[20];
+    for(auto &row : frame)
+    {
+        std::cout << row << std::endl;
+    }
 }
