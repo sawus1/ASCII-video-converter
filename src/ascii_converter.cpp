@@ -38,8 +38,8 @@ convert_video_to_ascii(const std::vector<cv::Mat>& video)
 
 char map_pixel_to_char(int color)
 {
-    char* charsSorted = " `.-':_,^=;><+!rc*/z?sLTv)J7(|Fi{C}fI31tlu[neoZ5Yxjya]2ESwqkP6h9d4VpOGbUAKXHm8RD#$Bg0MNWQ%&@";
-    int charsLen = 92;
-    int index = color * (charsLen - 1) / 255;
+    char* charsSorted = "@&%QWNM0gB$#DR8mHXKAUbGOpV4d9h6PkqwSE2]ayjxY5Zoen[ult13If}C{iF|(7J)vTLs?z/*cr!+<>;=^,_:'-.`  `.-':_,^=;><+!rc*/z?sLTv)J7(|Fi{C}fI31tlu[neoZ5Yxjya]2ESwqkP6h9d4VpOGbUAKXHm8RD#$Bg0MNWQ%&@";
+    int charsLen = 184;
+    int index = (255 - color) * (charsLen - 1) / 255;
     return charsSorted[index];
 }
