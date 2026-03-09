@@ -18,7 +18,7 @@ void convert_grayscale(cv::Mat& frame)
 
 void convert_lowresolution(cv::Mat& frame)
 {
-    int targetWidth = 120;
+    int targetWidth = 188;
     double aspectRatio = (double)frame.rows / frame.cols;
     double charAspect = 0.5;
     int targetHeight = static_cast<int>(targetWidth * aspectRatio * charAspect);
