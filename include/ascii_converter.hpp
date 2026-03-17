@@ -1,4 +1,5 @@
 #pragma once
+#include "config.hpp"
 #include <opencv2/opencv.hpp>
 #include <vector>
 std::vector<std::string> convert_frame_to_ascii(const cv::Mat& frame);

@@ -1,5 +1,17 @@
 #include "ascii_converter.hpp"
 
+extern startConfiguration cfg;
+
+char* set_chars()
+{
+    if(cfg.displayType = DT_NORMAL) return " .:-=+*#%@MW8B&$";
+    else if(cfg.displayType = DT_INVERSED) return "$&B8WM@%#*+=-:. ";
+    else if(cfg.displayType = DT_CONTRAST) return "$&B8WM@%#*+=-:.  .:-=+*#%@MW8B&$";
+}
+
+char* charset = set_chars();
+int charsLen = strlen(charset);
+
 std::vector<std::string> convert_frame_to_ascii(const cv::Mat& frame)
 {
     std::vector<std::string> asciiFrame;
@@ -38,8 +50,6 @@ convert_video_to_ascii(const std::vector<cv::Mat>& video)
 
 char map_pixel_to_char(int color)
 {
-    char* charsSorted = "$&B8WM@%#*+=-:.  .:-=+*#%@MW8B&$";
-    int charsLen = 32;
     int index = (255 - color) * (charsLen - 1) / 255;
-    return charsSorted[index];
+    return charset[index];
 }

@@ -1,4 +1,5 @@
 #pragma once
+#include "config.hpp"
 #include <opencv2/opencv.hpp>
 #include <vector>
 void process_frames(std::vector<cv::Mat>& original);

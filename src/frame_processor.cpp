@@ -1,5 +1,7 @@
 #include "frame_processor.hpp"
 
+extern startConfiguration cfg;
+
 void process_frames(std::vector<cv::Mat>& original)
 {
     for(auto &frame : original)
@@ -18,7 +20,7 @@ void convert_grayscale(cv::Mat& frame)
 
 void convert_lowresolution(cv::Mat& frame)
 {
-    int targetWidth = 188;
+    int targetWidth = cfg.displayWidth;
     double aspectRatio = (double)frame.rows / frame.cols;
     double charAspect = 0.5;
     int targetHeight = static_cast<int>(targetWidth * aspectRatio * charAspect);
