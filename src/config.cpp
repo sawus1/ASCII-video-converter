@@ -21,6 +21,9 @@ void parse_arguments(int argc, const char** argv)
             else if(displayType == "inversed") cfg.displayType = DT_INVERSED;
             else if(displayType == "contrast") cfg.displayType = DT_CONTRAST;
         }
+        else if((arg == "--output-filename" || arg == "-o") && i + 1 < argc) {
+            cfg.outputVideoPath = argv[i+1];
+        }
     }
     if(cfg.videoPath.empty()) {std::cerr << "video path must be included as argument." << std::endl; exit(-1);}
     if(cfg.displayWidth == 0) {cfg.displayWidth = 100; }

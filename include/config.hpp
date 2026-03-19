@@ -12,4 +12,5 @@ struct startConfiguration
     int displayWidth;
     int displayType;
     std::string videoPath;
+    std::string outputVideoPath;
 };
